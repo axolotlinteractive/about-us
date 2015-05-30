@@ -1,0 +1,8 @@
+{
+  "pluginName" : "about-us",
+  "rootNameSpace" : "AboutUs",
+  "LifeCycle" : {
+    "className" : "Plugin"
+  },
+  "optionsPrefix" : "about_us"
+}
