@@ -9,6 +9,7 @@
 namespace AboutUs;
 
 
+use AboutUs\Model\Person;
 use WordWrap\LifeCycle;
 
 class Plugin extends LifeCycle{
@@ -61,7 +62,7 @@ class Plugin extends LifeCycle{
      * @return void
      */
     protected function installDatabaseTables() {
-
+        Person::install_table();
     }
 
     /**
