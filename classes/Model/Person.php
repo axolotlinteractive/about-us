@@ -7,7 +7,7 @@
  */
 namespace AboutUs\Model;
 
-use WordWrap\BaseModel;
+use WordWrap\ORM\BaseModel;
 
 class Person extends BaseModel{
 
@@ -25,7 +25,7 @@ class Person extends BaseModel{
      * @var string this persons title in the company
      */
     public $title;
-    
+
     /**
      * @var string the url to this persons image
      */
