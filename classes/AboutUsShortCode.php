@@ -9,7 +9,10 @@
 namespace AboutUs;
 
 
+use AboutUs\Model\Person;
 use WordWrap\ShortCodeScriptLoader;
+use WordWrap\View\View;
+use WordWrap\View\ViewCollection;
 
 class AboutUsShortCode extends ShortCodeScriptLoader{
 
@@ -18,7 +21,21 @@ class AboutUsShortCode extends ShortCodeScriptLoader{
      * @return string shortcode content
      */
     public function handleShortcode($atts) {
-        return 'Butts!';
+        $us = Person::all();
+
+        $collection = new ViewCollection($this->lifeCycle, "front_end_container");
+
+        foreach($us as $entry) {
+            $entryView = new View($this->lifeCycle, "front_end_entry");
+
+            $entryView->setTemplateVar("name", $entry->name);
+            $entryView->setTemplateVar("image_url", $entry->image_url);
+            $entryView->setTemplateVar("title", $entry->title);
+
+            $collection->addChildView("person_entry", $entryView);
+        }
+
+        return $collection->export();
     }
 
     /**
