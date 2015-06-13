@@ -86,6 +86,8 @@ class Plugin extends LifeCycle{
 
     public function addActionsAndFilters() {
 
+        $sc = new AboutUsShortCode($this);
+        $sc->register('about_us');
 
     }
 }
