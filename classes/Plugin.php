@@ -86,6 +86,8 @@ class Plugin extends LifeCycle{
 
     public function addActionsAndFilters() {
 
+        $this->assetManager->registerAssetType("html", __DIR__ . "/../assets/html/");
+
         $sc = new AboutUsShortCode($this);
         $sc->register('about_us');
 
