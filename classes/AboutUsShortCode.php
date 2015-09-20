@@ -10,9 +10,9 @@ namespace AboutUs;
 
 
 use AboutUs\Model\Person;
+use WordWrap\Assets\View\View;
+use WordWrap\Assets\View\ViewCollection;
 use WordWrap\ShortCodeScriptLoader;
-use WordWrap\View\View;
-use WordWrap\View\ViewCollection;
 
 class AboutUsShortCode extends ShortCodeScriptLoader{
 
